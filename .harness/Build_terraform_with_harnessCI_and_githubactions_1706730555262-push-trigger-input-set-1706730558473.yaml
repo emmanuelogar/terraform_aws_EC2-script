@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_terraform_with_harnessCI_and_githubactions_1706730555262-push-trigger-input-set
+  identifier: Build_terraform_with_harnessCI_and_githubactions_1706730555262pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: githubactions_with_harness_ci
+  pipeline:
+    identifier: Build_terraform_with_harnessCI_and_githubactions_1706730555262
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
