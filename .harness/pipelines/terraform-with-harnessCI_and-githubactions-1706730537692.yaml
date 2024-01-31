@@ -18,16 +18,15 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
+                  type: Action
+                  name: Action_1
+                  identifier: Action_1
                   spec:
-                    command: echo hello world
-                  timeout: ""
-                  type: Run
+                    uses: terraform-with-harnessCI_and-githubactions
           platform:
+            os: Windows
             arch: Amd64
-            os: Linux
           runtime:
-            spec: {}
             type: Docker
+            spec: {}
         type: CI
