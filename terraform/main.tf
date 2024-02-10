@@ -1,24 +1,13 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
-
-  required_version = ">= 1.2.0"
-}
-
 provider "aws" {
-  region  = "us-west-2"
-  profile = "jack.roper"
+    access_key = "${var.access_key}"
+    secret_key = "${var.secret_key}"
+    region = "us-east-1"
 }
 
-resource "aws_instance" "example_server" {
-  ami           = "ami-04e914639d0cca79a"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "JacksBlogExample"
-  }
-}
+resource "aws_instance" "ec2_instance" {
+    ami = "${var.ami_id}"
+    count = "${var.number_of_instances}"
+    subnet_id = "${var.subnet_id}"
+    instance_type = "${var.instance_type}"
+    key_name = "${var.ami_key_pair_name}"
+} 
