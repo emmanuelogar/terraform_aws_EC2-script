@@ -1,1 +1,1 @@
-# terraform-with-harnessCI_and-githubactions
+# Simple Terraform script to create an EC2 instance
